@@ -28,7 +28,7 @@ public class TesteWeb {
 
     @Test
     public void primeiroTeste(){
-        String xpathTitulo = "//h4[contains(.,'Porque tempo é conhecimento.')]";
+        String xpathTitulo = "//section[2]//h4";
         WebElement txtTitulo = driver.findElement(By.xpath(xpathTitulo));
         String titulo = txtTitulo.getText();
         assertEquals("Porque Tempo É Conhecimento.", titulo);
