@@ -16,12 +16,12 @@ public class LoginSteps {
     public LoginPage loginPage;
 
     @Before
-    public void iniciaNavegador(){
+    public void iniciaNavegador() {
         new Driver("chrome");
     }
 
     @After
-    public void fechaNavegador(){
+    public void fechaNavegador() {
         Driver.getDriver().quit();
     }
 
@@ -38,9 +38,12 @@ public class LoginSteps {
     }
 
     @Entao("a janela modal deve ser fechada")
-    public void aJanelaModalDeveSerFechada() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    public void aJanelaModalDeveSerFechada() throws Exception {
+        try {
+            loginPage.invisibilityOfBtnFechar();
+        } catch (Exception e) {
+            throw new Exception("A janela modal nao foi fechada");
+        }
     }
 
     @Quando("for realizado um clique no icone de fechar")
@@ -65,7 +68,7 @@ public class LoginSteps {
         boolean remember = Boolean.parseBoolean(map.get("remember"));
         loginPage.setInpUserName(username);
         loginPage.setInpPassWord(password);
-        if (remember){
+        if (remember) {
             loginPage.clickInpRemember();
         }
     }
