@@ -56,4 +56,8 @@ public class LoginPage {
     public void invisibilityOfBtnFechar(){
         Driver.invisibilityOf(loginMap.btnFechar);
     }
+
+    public void aguardaLoader(){
+        Driver.attributeChange(loginMap.divLoader, "display", "none");
+    }
 }
