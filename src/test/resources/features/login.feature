@@ -19,7 +19,7 @@ Funcionalidade: Login
     Quando for realizado um clique no link Create New Account
     Entao a pagina Create New Account deve ser exibida
 
-
+  @LoginComSucesso
   Esquema do Cenario: Realizar login com <identificacao>
     Quando os campos de login forem preechidos da seguinte forma
       | login    | <login>    |
@@ -28,9 +28,9 @@ Funcionalidade: Login
     Quando for realizado um clique no botao sign in
     Entao deve ser possivel logar no sistema
     Exemplos:
-      | identificacao       | login   | password | remember |
-      | todos os campos     | chronos | senha    | true     |
-      | campos obrigatorios | chronos | senha    | false    |
+      | identificacao       | login  | password | remember |
+      | todos os campos     | samuka | Senha123 | true     |
+      | campos obrigatorios | samuka | Senha123 | false    |
 
 
   Esquema do Cenario: Realizar login com <identificacao>
@@ -42,8 +42,8 @@ Funcionalidade: Login
     Entao o sistema deve exibir uma mensagem de erro
     Exemplos:
       | identificacao    | login    | password | remember |
-      | usuario invalido | invalido | senha    | false    |
-      | senha invalida   | chronos  | invalido | false    |
+      | usuario invalido | invalido | Senha123 | false    |
+      | senha invalida   | samuka   | invalido | false    |
 
   @dadosEmBranco
   Esquema do Cenario: Realizar login com <identificacao>
@@ -53,6 +53,6 @@ Funcionalidade: Login
       | remember | <remember> |
     Entao o botao sign in deve permanecer desabilitado
     Exemplos:
-      | identificacao     | login   | password | remember |
-      | usuario em branco |         | senha    | false    |
-      | senha em branco   | chronos |          | false    |
+      | identificacao     | login  | password | remember |
+      | usuario em branco |        | Senha123 | false    |
+      | senha em branco   | samuka |          | false    |
