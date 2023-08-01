@@ -29,7 +29,7 @@ Funcionalidade: Login
     Entao deve ser possivel logar no sistema
     Exemplos:
       | identificacao       | login  | password | remember |
-      | todos os campos     | samuka | Senha123 | true     |
+      | todos os campos     | erro   | Senha123 | true     |
       | campos obrigatorios | samuka | Senha123 | false    |
 
 
