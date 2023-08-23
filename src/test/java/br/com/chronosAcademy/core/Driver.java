@@ -8,6 +8,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
@@ -29,8 +30,7 @@ public class Driver {
     public Driver(Browser browser) {
         switch (browser) {
             case CHROME:
-                WebDriverManager.chromedriver().setup();
-                driver = new ChromeDriver();
+                startChrome();
                 break;
             case IE:
                 WebDriverManager.iedriver().setup();
@@ -47,6 +47,14 @@ public class Driver {
         }
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         driver.manage().window().maximize();
+    }
+
+    private static void startChrome() {
+        WebDriverManager.chromedriver().setup();
+        ChromeOptions chromeOptions = new ChromeOptions();
+        boolean headless = Boolean.parseBoolean(System.getProperty("headless"));
+        chromeOptions.setHeadless(headless);
+        driver = new ChromeDriver(chromeOptions);
     }
 
     public static void visibilityOf(WebElement element){

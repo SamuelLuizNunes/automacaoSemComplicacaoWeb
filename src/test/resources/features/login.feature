@@ -29,8 +29,8 @@ Funcionalidade: Login
     Entao deve ser possivel logar no sistema
     Exemplos:
       | identificacao       | login  | password | remember |
-      | todos os campos     | erro   | Senha123 | true     |
-      | campos obrigatorios | samuka | Senha123 | false    |
+      | todos os campos     | samuka | Samuka1  | true     |
+      | campos obrigatorios | samuka | Samuka1  | false    |
 
 
   Esquema do Cenario: Realizar login com <identificacao>
@@ -42,7 +42,7 @@ Funcionalidade: Login
     Entao o sistema deve exibir uma mensagem de erro
     Exemplos:
       | identificacao    | login    | password | remember |
-      | usuario invalido | invalido | Senha123 | false    |
+      | usuario invalido | invalido | Samuka1  | false    |
       | senha invalida   | samuka   | invalido | false    |
 
   @dadosEmBranco
@@ -54,5 +54,5 @@ Funcionalidade: Login
     Entao o botao sign in deve permanecer desabilitado
     Exemplos:
       | identificacao     | login  | password | remember |
-      | usuario em branco |        | Senha123 | false    |
+      | usuario em branco |        | Samuka1  | false    |
       | senha em branco   | samuka |          | false    |
